@@ -1,0 +1,65 @@
+<div class="container" *ngIf="!evento_subido">
+  <h1>Crear gasto</h1>
+  <h2>Imagen</h2>
+  <input
+    type="file"
+    id="fileInput"
+    accept="image/*"
+    multiple
+    (change)="onFileSelected($event)"
+    class="form-control"
+  />
+  <button
+    *ngIf="!fotos_subidas"
+    class="btn btn-primary mt-2"
+    (click)="onButtonClicked()"
+  >
+    Subir imágenes
+  </button>
+  <div *ngIf="fotos_subidas" class="alert alert-success mt-2" role="alert">
+    ¡Fotos subidas!
+  </div>
+  <br>
+  <h2>Datos</h2>
+  <form (ngSubmit)="onSubmit()">
+    <br />
+    <div class="mb-3">
+      <label for="concepto" class="form-label">Concepto:</label>
+      <input
+        type="text"
+        id="concepto"
+        [(ngModel)]="gasto.concepto"
+        name="concepto"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="importe" class="form-label">Importe:</label>
+      <input
+        type="number"
+        id="importe"
+        [(ngModel)]="gasto.importe"
+        name="importe"
+        class="form-control"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="lugar" class="form-label">Lugar:</label>
+      <input
+        type="text"
+        id="lugar"
+        [(ngModel)]="gasto.lugar"
+        name="lugar"
+        class="form-control"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary btn-mt-3">Crear</button>
+  </form>
+</div>
+<div class="container" *ngIf="evento_subido">
+    <h1>GASTO CREADO</h1>
+</div>

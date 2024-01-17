@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <h1>aPachasWeb</h1>
+
+    <app-oauth></app-oauth>
+ 
+    <h2>TODOS LOS GASTOS</h2>
+    <h3>Saldo: </h3>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">
+            <div *ngFor="let gasto of gastos; let i = index" class="col">
+                <div class="card h-100">
+                    <img [src]="gasto.imagen" class="card-img-top" alt="Event Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{gasto.concepto}}</h5>
+                        <h5 class="card-title">{{gasto.timestamp}}</h5>
+                        <p class="card-text">{{gasto.email}}</p>
+                        <p class="card-text">{{gasto.importe}}</p>
+                        <p class="card-text">{{gasto.lugar}}</p>
+                        <button class="btn btn-primary" (click)="onClickBorrar(gasto._id)">Borrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <app-map></app-map>
+    
+</div>
