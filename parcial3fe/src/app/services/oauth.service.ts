@@ -15,7 +15,7 @@ export class OauthService {
     // Define your backend API URL
     const backendUrl = 'http://3.79.86.124:8000/logged';
 
-    // Send a POST request to the backend with the idToken
+    // Send a POST request to the backend with the idToke
     this.http.post(backendUrl, { idtoken: user.idToken }).subscribe(
       (response) => {
         console.log('Token verification success:', response);
