@@ -16,7 +16,7 @@ export class ImagenService {
       formData.append('images', files[i]);
     }
 
-    return this.http.post<any>('http://127.0.0.1:8000/api/image/upload', formData);
+    return this.http.post<any>('http://3.79.86.124:8000/api/image/upload', formData);
   
   }
 }
